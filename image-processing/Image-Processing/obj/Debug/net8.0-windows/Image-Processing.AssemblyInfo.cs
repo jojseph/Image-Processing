@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Image-Processing")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6951e93df101367ca7a31a2d120556581d7be5f4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0d221748c96679c02905810cc39346c390e2ca08")]
 [assembly: System.Reflection.AssemblyProductAttribute("Image-Processing")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Image-Processing")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -52,10 +52,25 @@ namespace Image_Processing
         private void loadToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp;*.gif|All Files|*.*";
+
             if (open.ShowDialog() == DialogResult.OK)
             {
-                loaded = new Bitmap(open.FileName);
-                reloadImages();
+                try
+                {
+                    using (var test = Image.FromFile(open.FileName)) 
+                    {
+                        loaded = new Bitmap(test); 
+                    }
+                    reloadImages();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("The selected file is not a valid image.\n\n" + ex.Message,
+                                    "Invalid File",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -79,7 +94,7 @@ namespace Image_Processing
                     processed = ImageProcessing.Invert(loaded);
                     break;
                 case 3:
-                    processed = Historgram.DrawHistogram(loaded, picture_result.Size);
+                    processed = Histogram.DrawHistogram(loaded, picture_result.Size);
                     break;
                 case 4:
                     processed = ImageProcessing.Sepia(loaded);

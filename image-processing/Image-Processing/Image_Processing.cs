@@ -53,4 +53,44 @@
             return Color.FromArgb(r, g, b);
         });
     }
+    private static Bitmap ResizeImage(Bitmap a, Bitmap b)
+    {
+        Bitmap resizedImage = new Bitmap(b.Width, b.Height);
+
+        using (Graphics g = Graphics.FromImage(resizedImage))
+        {
+            g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+            g.PixelOffsetMode = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+            g.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+
+            g.DrawImage(a, new Rectangle(0, 0, b.Width, b.Height));
+        }
+
+        return resizedImage;
+    }
+
+    public static Bitmap Subtract(Bitmap imageA, Bitmap imageB, Color subColor)
+    {
+        if (imageA == null || imageB == null) { return null; }
+
+        Bitmap a = ResizeImage(imageA, imageB);
+
+        int sub = (subColor.R + subColor.G + subColor.B) / 3;
+        int threshold = 10;
+
+        Bitmap subtractRes = new Bitmap(a.Width, a.Height);
+
+        for (int i = 0; i < a.Width; i++)
+        {
+            for (int j = 0; j < a.Height; j++)
+            {
+                Color front = a.GetPixel(i, j);
+                Color back = imageB.GetPixel(i, j);
+                int curr = (front.R + front.G + front.B) / 3;
+                subtractRes.SetPixel(i, j, Math.Abs(curr - sub) <= threshold ? back : front);
+            }
+        }
+
+        return subtractRes;
+    }
 }

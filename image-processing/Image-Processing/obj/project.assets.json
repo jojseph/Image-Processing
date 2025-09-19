@@ -2,13 +2,46 @@
   "version": 3,
   "targets": {
     "net8.0-windows7.0": {
-      "MetroSet_UI/2.0.0": {
+      "AForge/2.2.5": {
         "type": "package",
         "compile": {
-          "lib/netcoreapp3.1/MetroSet UI.dll": {}
+          "lib/AForge.dll": {}
         },
         "runtime": {
-          "lib/netcoreapp3.1/MetroSet UI.dll": {}
+          "lib/AForge.dll": {}
+        }
+      },
+      "AForge.Video/2.2.5": {
+        "type": "package",
+        "dependencies": {
+          "AForge": "2.2.5"
+        },
+        "compile": {
+          "lib/AForge.Video.dll": {}
+        },
+        "runtime": {
+          "lib/AForge.Video.dll": {}
+        }
+      },
+      "AForge.Video.DirectShow/2.2.5": {
+        "type": "package",
+        "dependencies": {
+          "AForge.Video": "2.2.5"
+        },
+        "compile": {
+          "lib/AForge.Video.DirectShow.dll": {}
+        },
+        "runtime": {
+          "lib/AForge.Video.DirectShow.dll": {}
+        }
+      },
+      "MaterialSkin.2/2.3.1": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0-windows7.0/MaterialSkin.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/MaterialSkin.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App.WindowsForms"
@@ -17,45 +50,88 @@
     }
   },
   "libraries": {
-    "MetroSet_UI/2.0.0": {
-      "sha512": "7FO1rFTiht/j+xdvyRBQOv3JL8yoKBwQrrBuA/Zbz98sNIhgpNDO977ZumAz6TTfbuIT/4waSHsFBp01cXDDIA==",
+    "AForge/2.2.5": {
+      "sha512": "clkumhM9DggqIzEXAHgVLeWO4arG5YfoPr7J4jfjJx35AoeEIJSSm49J25bwp/9mXQYLwi7y1Wunc8qgYJsGxg==",
       "type": "package",
-      "path": "metroset_ui/2.0.0",
+      "path": "aforge/2.2.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "LICENSE",
-        "MetroSet.png",
-        "lib/net45/MetroSet UI.dll",
-        "lib/netcoreapp3.1/MetroSet UI.dll",
-        "metroset_ui.2.0.0.nupkg.sha512",
-        "metroset_ui.nuspec"
+        "aforge.2.2.5.nupkg.sha512",
+        "aforge.nuspec",
+        "lib/AForge.dll",
+        "lib/AForge.xml"
+      ]
+    },
+    "AForge.Video/2.2.5": {
+      "sha512": "XqzcOXtBUagEPRqg/00oayxlCPmxP4284SdM62mVotsNoD03fs19BrzdMBfhUOOYPyd0B/IXH7tEWnSDmc2gxA==",
+      "type": "package",
+      "path": "aforge.video/2.2.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "aforge.video.2.2.5.nupkg.sha512",
+        "aforge.video.nuspec",
+        "lib/AForge.Video.dll",
+        "lib/AForge.Video.xml"
+      ]
+    },
+    "AForge.Video.DirectShow/2.2.5": {
+      "sha512": "pEch6felU/RGAbl0A7yjaQjsGxwiRFU9R+qBqR92wQo++XhzPLeQaZHnAPIBYaG7MfoqtjgCDkK4z3Tra4VQ3w==",
+      "type": "package",
+      "path": "aforge.video.directshow/2.2.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "aforge.video.directshow.2.2.5.nupkg.sha512",
+        "aforge.video.directshow.nuspec",
+        "lib/AForge.Video.DirectShow.dll",
+        "lib/AForge.Video.DirectShow.xml"
+      ]
+    },
+    "MaterialSkin.2/2.3.1": {
+      "sha512": "w2vFxLNk4InCDU7pXDfBqPfv55HhBtuu8HRfEqQpeS3sNTS1pUzDs/hS0b5JW2/tKvt+P1of9OINP8a9omWDBg==",
+      "type": "package",
+      "path": "materialskin.2/2.3.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net45/MaterialSkin.dll",
+        "lib/net461/MaterialSkin.dll",
+        "lib/net48/MaterialSkin.dll",
+        "lib/net5.0-windows7.0/MaterialSkin.dll",
+        "materialskin.2.2.3.1.nupkg.sha512",
+        "materialskin.2.nuspec",
+        "nugetIcon.png"
       ]
     }
   },
   "projectFileDependencyGroups": {
     "net8.0-windows7.0": [
-      "MetroSet_UI >= 2.0.0"
+      "AForge.Video >= 2.2.5",
+      "AForge.Video.DirectShow >= 2.2.5",
+      "MaterialSkin.2 >= 2.3.1"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\joseph\\.nuget\\packages\\": {},
+    "C:\\Users\\novabos\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\joseph\\source\\repos\\Image-Processing\\Image-Processing\\Image-Processing.csproj",
+      "projectUniqueName": "C:\\Users\\novabos\\source\\repos\\jojseph\\image-processing\\image-processing\\Image-Processing\\Image-Processing.csproj",
       "projectName": "Image-Processing",
-      "projectPath": "C:\\Users\\joseph\\source\\repos\\Image-Processing\\Image-Processing\\Image-Processing.csproj",
-      "packagesPath": "C:\\Users\\joseph\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\joseph\\source\\repos\\Image-Processing\\Image-Processing\\obj\\",
+      "projectPath": "C:\\Users\\novabos\\source\\repos\\jojseph\\image-processing\\image-processing\\Image-Processing\\Image-Processing.csproj",
+      "packagesPath": "C:\\Users\\novabos\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\novabos\\source\\repos\\jojseph\\image-processing\\image-processing\\Image-Processing\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\joseph\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\novabos\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -88,9 +164,17 @@
       "net8.0-windows7.0": {
         "targetAlias": "net8.0-windows",
         "dependencies": {
-          "MetroSet_UI": {
+          "AForge.Video": {
             "target": "Package",
-            "version": "[2.0.0, )"
+            "version": "[2.2.5, )"
+          },
+          "AForge.Video.DirectShow": {
+            "target": "Package",
+            "version": "[2.2.5, )"
+          },
+          "MaterialSkin.2": {
+            "target": "Package",
+            "version": "[2.3.1, )"
           }
         },
         "imports": [
@@ -115,5 +199,37 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'AForge 2.2.5' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "AForge",
+      "targetGraphs": [
+        "net8.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'AForge.Video 2.2.5' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "AForge.Video",
+      "targetGraphs": [
+        "net8.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'AForge.Video.DirectShow 2.2.5' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "AForge.Video.DirectShow",
+      "targetGraphs": [
+        "net8.0-windows7.0"
+      ]
+    }
+  ]
 }

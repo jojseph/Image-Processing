@@ -49,6 +49,7 @@
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
             panel1 = new Panel();
+            label3 = new Label();
             label2 = new Label();
             btnPickColor = new Button();
             panel2 = new Panel();
@@ -76,31 +77,28 @@
             Image_filters.Controls.Add(picture_result);
             Image_filters.Controls.Add(picture_orig);
             Image_filters.Controls.Add(menuStrip1);
-            Image_filters.Location = new Point(4, 24);
-            Image_filters.Margin = new Padding(3, 2, 3, 2);
+            Image_filters.Location = new Point(4, 29);
             Image_filters.Name = "Image_filters";
-            Image_filters.Padding = new Padding(3, 2, 3, 2);
-            Image_filters.Size = new Size(1005, 519);
+            Image_filters.Padding = new Padding(3);
+            Image_filters.Size = new Size(1150, 696);
             Image_filters.TabIndex = 0;
             Image_filters.Text = "Image Filters";
             Image_filters.UseVisualStyleBackColor = true;
             // 
             // picture_result
             // 
-            picture_result.Location = new Point(523, 71);
-            picture_result.Margin = new Padding(3, 2, 3, 2);
+            picture_result.Location = new Point(598, 95);
             picture_result.Name = "picture_result";
-            picture_result.Size = new Size(448, 411);
+            picture_result.Size = new Size(512, 548);
             picture_result.SizeMode = PictureBoxSizeMode.StretchImage;
             picture_result.TabIndex = 2;
             picture_result.TabStop = false;
             // 
             // picture_orig
             // 
-            picture_orig.Location = new Point(35, 71);
-            picture_orig.Margin = new Padding(3, 2, 3, 2);
+            picture_orig.Location = new Point(40, 95);
             picture_orig.Name = "picture_orig";
-            picture_orig.Size = new Size(448, 411);
+            picture_orig.Size = new Size(512, 548);
             picture_orig.SizeMode = PictureBoxSizeMode.StretchImage;
             picture_orig.TabIndex = 1;
             picture_orig.TabStop = false;
@@ -109,10 +107,10 @@
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
             menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, filtersToolStripMenuItem });
-            menuStrip1.Location = new Point(3, 2);
+            menuStrip1.Location = new Point(3, 3);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Padding = new Padding(5, 2, 0, 2);
-            menuStrip1.Size = new Size(999, 24);
+            menuStrip1.Padding = new Padding(6, 3, 0, 3);
+            menuStrip1.Size = new Size(1144, 30);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -120,13 +118,13 @@
             // 
             fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { saveToolStripMenuItem, loadToolStripMenuItem1 });
             fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            fileToolStripMenuItem.Size = new Size(37, 20);
+            fileToolStripMenuItem.Size = new Size(46, 24);
             fileToolStripMenuItem.Text = "File";
             // 
             // saveToolStripMenuItem
             // 
             saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            saveToolStripMenuItem.Size = new Size(100, 22);
+            saveToolStripMenuItem.Size = new Size(125, 26);
             saveToolStripMenuItem.Text = "Save";
             saveToolStripMenuItem.Click += saveToolStripMenuItem_Click;
             // 
@@ -134,7 +132,7 @@
             // 
             loadToolStripMenuItem1.AccessibleRole = AccessibleRole.ButtonMenu;
             loadToolStripMenuItem1.Name = "loadToolStripMenuItem1";
-            loadToolStripMenuItem1.Size = new Size(100, 22);
+            loadToolStripMenuItem1.Size = new Size(125, 26);
             loadToolStripMenuItem1.Text = "Load";
             loadToolStripMenuItem1.Click += loadToolStripMenuItem1_Click;
             // 
@@ -142,41 +140,41 @@
             // 
             filtersToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { duplicateToolStripMenuItem, greyscaleToolStripMenuItem, inversionToolStripMenuItem, histogramToolStripMenuItem, sepiaToolStripMenuItem });
             filtersToolStripMenuItem.Name = "filtersToolStripMenuItem";
-            filtersToolStripMenuItem.Size = new Size(50, 20);
+            filtersToolStripMenuItem.Size = new Size(62, 24);
             filtersToolStripMenuItem.Text = "Filters";
             // 
             // duplicateToolStripMenuItem
             // 
             duplicateToolStripMenuItem.Name = "duplicateToolStripMenuItem";
-            duplicateToolStripMenuItem.Size = new Size(133, 22);
+            duplicateToolStripMenuItem.Size = new Size(166, 26);
             duplicateToolStripMenuItem.Text = "Duplicate";
             duplicateToolStripMenuItem.Click += duplicateToolStripMenuItem_Click;
             // 
             // greyscaleToolStripMenuItem
             // 
             greyscaleToolStripMenuItem.Name = "greyscaleToolStripMenuItem";
-            greyscaleToolStripMenuItem.Size = new Size(133, 22);
+            greyscaleToolStripMenuItem.Size = new Size(166, 26);
             greyscaleToolStripMenuItem.Text = "Greyscale ";
             greyscaleToolStripMenuItem.Click += greyscaleToolStripMenuItem_Click;
             // 
             // inversionToolStripMenuItem
             // 
             inversionToolStripMenuItem.Name = "inversionToolStripMenuItem";
-            inversionToolStripMenuItem.Size = new Size(133, 22);
+            inversionToolStripMenuItem.Size = new Size(166, 26);
             inversionToolStripMenuItem.Text = "Inversion  ";
             inversionToolStripMenuItem.Click += inversionToolStripMenuItem_Click;
             // 
             // histogramToolStripMenuItem
             // 
             histogramToolStripMenuItem.Name = "histogramToolStripMenuItem";
-            histogramToolStripMenuItem.Size = new Size(133, 22);
+            histogramToolStripMenuItem.Size = new Size(166, 26);
             histogramToolStripMenuItem.Text = "Histogram ";
             histogramToolStripMenuItem.Click += histogramToolStripMenuItem_Click;
             // 
             // sepiaToolStripMenuItem
             // 
             sepiaToolStripMenuItem.Name = "sepiaToolStripMenuItem";
-            sepiaToolStripMenuItem.Size = new Size(133, 22);
+            sepiaToolStripMenuItem.Size = new Size(166, 26);
             sepiaToolStripMenuItem.Text = "Sepia";
             sepiaToolStripMenuItem.Click += sepiaToolStripMenuItem_Click;
             // 
@@ -189,20 +187,20 @@
             Image_subtract.Controls.Add(pictureBox2);
             Image_subtract.Controls.Add(pictureBox1);
             Image_subtract.Controls.Add(panel1);
-            Image_subtract.Location = new Point(4, 24);
-            Image_subtract.Margin = new Padding(3, 2, 3, 2);
+            Image_subtract.Location = new Point(4, 29);
             Image_subtract.Name = "Image_subtract";
-            Image_subtract.Padding = new Padding(3, 2, 3, 2);
-            Image_subtract.Size = new Size(1005, 519);
+            Image_subtract.Padding = new Padding(3);
+            Image_subtract.Size = new Size(1150, 696);
             Image_subtract.TabIndex = 1;
             Image_subtract.Text = "Image Subtract";
             Image_subtract.UseVisualStyleBackColor = true;
             // 
             // btn_subtract
             // 
-            btn_subtract.Location = new Point(770, 335);
+            btn_subtract.Location = new Point(880, 447);
+            btn_subtract.Margin = new Padding(3, 4, 3, 4);
             btn_subtract.Name = "btn_subtract";
-            btn_subtract.Size = new Size(149, 23);
+            btn_subtract.Size = new Size(170, 31);
             btn_subtract.TabIndex = 5;
             btn_subtract.Text = "Subtract";
             btn_subtract.UseVisualStyleBackColor = true;
@@ -210,9 +208,10 @@
             // 
             // btn_loadImageB
             // 
-            btn_loadImageB.Location = new Point(438, 335);
+            btn_loadImageB.Location = new Point(501, 447);
+            btn_loadImageB.Margin = new Padding(3, 4, 3, 4);
             btn_loadImageB.Name = "btn_loadImageB";
-            btn_loadImageB.Size = new Size(149, 23);
+            btn_loadImageB.Size = new Size(170, 31);
             btn_loadImageB.TabIndex = 4;
             btn_loadImageB.Text = "Load Background";
             btn_loadImageB.UseVisualStyleBackColor = true;
@@ -220,9 +219,10 @@
             // 
             // btn_loadImageA
             // 
-            btn_loadImageA.Location = new Point(102, 335);
+            btn_loadImageA.Location = new Point(117, 447);
+            btn_loadImageA.Margin = new Padding(3, 4, 3, 4);
             btn_loadImageA.Name = "btn_loadImageA";
-            btn_loadImageA.Size = new Size(149, 23);
+            btn_loadImageA.Size = new Size(170, 31);
             btn_loadImageA.TabIndex = 3;
             btn_loadImageA.Text = "Load Image";
             btn_loadImageA.UseVisualStyleBackColor = true;
@@ -230,27 +230,30 @@
             // 
             // pictureBox3
             // 
-            pictureBox3.Location = new Point(685, 36);
+            pictureBox3.Location = new Point(783, 48);
+            pictureBox3.Margin = new Padding(3, 4, 3, 4);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(302, 278);
+            pictureBox3.Size = new Size(345, 371);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox3.TabIndex = 2;
             pictureBox3.TabStop = false;
             // 
             // pictureBox2
             // 
-            pictureBox2.Location = new Point(349, 36);
+            pictureBox2.Location = new Point(399, 48);
+            pictureBox2.Margin = new Padding(3, 4, 3, 4);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(302, 278);
+            pictureBox2.Size = new Size(345, 371);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(22, 36);
+            pictureBox1.Location = new Point(25, 48);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(302, 278);
+            pictureBox1.Size = new Size(345, 371);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -258,6 +261,7 @@
             // panel1
             // 
             panel1.BackColor = Color.GhostWhite;
+            panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(btnPickColor);
             panel1.Controls.Add(panel2);
@@ -265,26 +269,39 @@
             panel1.Controls.Add(label1);
             panel1.Controls.Add(comboBox1);
             panel1.Controls.Add(textBox1);
-            panel1.Location = new Point(0, 423);
+            panel1.Location = new Point(0, 564);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1005, 100);
+            panel1.Size = new Size(1149, 133);
             panel1.TabIndex = 13;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.ForeColor = SystemColors.ActiveBorder;
+            label3.Location = new Point(43, 107);
+            label3.Name = "label3";
+            label3.Size = new Size(324, 20);
+            label3.TabIndex = 13;
+            label3.Text = "Tip: Use a smaller image for smooth experience";
+            label3.Click += label3_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(853, 34);
+            label2.Location = new Point(975, 45);
             label2.Name = "label2";
-            label2.Size = new Size(125, 15);
+            label2.Size = new Size(156, 20);
             label2.TabIndex = 12;
             label2.Text = "Hold the mouse down";
             label2.Click += label2_Click;
             // 
             // btnPickColor
             // 
-            btnPickColor.Location = new Point(842, 52);
+            btnPickColor.Location = new Point(962, 69);
+            btnPickColor.Margin = new Padding(3, 4, 3, 4);
             btnPickColor.Name = "btnPickColor";
-            btnPickColor.Size = new Size(145, 23);
+            btnPickColor.Size = new Size(166, 31);
             btnPickColor.TabIndex = 8;
             btnPickColor.Text = "Pick a color";
             btnPickColor.UseVisualStyleBackColor = true;
@@ -295,17 +312,19 @@
             // panel2
             // 
             panel2.BorderStyle = BorderStyle.FixedSingle;
-            panel2.Location = new Point(773, 52);
+            panel2.Location = new Point(883, 69);
+            panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(38, 23);
+            panel2.Size = new Size(43, 30);
             panel2.TabIndex = 11;
             // 
             // checkBox1
             // 
             checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(58, 52);
+            checkBox1.Location = new Point(66, 69);
+            checkBox1.Margin = new Padding(3, 4, 3, 4);
             checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(89, 19);
+            checkBox1.Size = new Size(110, 24);
             checkBox1.TabIndex = 6;
             checkBox1.Text = "Use Camera";
             checkBox1.UseVisualStyleBackColor = true;
@@ -314,26 +333,28 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(667, 34);
+            label1.Location = new Point(762, 45);
             label1.Name = "label1";
-            label1.Size = new Size(36, 15);
+            label1.Size = new Size(45, 20);
             label1.TabIndex = 10;
             label1.Text = "Color";
             // 
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(151, 49);
+            comboBox1.Location = new Point(173, 65);
+            comboBox1.Margin = new Padding(3, 4, 3, 4);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
+            comboBox1.Size = new Size(138, 28);
             comboBox1.TabIndex = 7;
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(667, 52);
+            textBox1.Location = new Point(762, 69);
+            textBox1.Margin = new Padding(3, 4, 3, 4);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 23);
+            textBox1.Size = new Size(114, 27);
             textBox1.TabIndex = 9;
             // 
             // miniToolStrip
@@ -352,21 +373,21 @@
             // 
             Image_filter.Controls.Add(Image_filters);
             Image_filter.Controls.Add(Image_subtract);
-            Image_filter.Location = new Point(10, 9);
-            Image_filter.Margin = new Padding(3, 2, 3, 2);
+            Image_filter.Location = new Point(11, 12);
             Image_filter.Name = "Image_filter";
             Image_filter.SelectedIndex = 0;
-            Image_filter.Size = new Size(1013, 547);
+            Image_filter.Size = new Size(1158, 729);
             Image_filter.TabIndex = 0;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1034, 562);
+            ClientSize = new Size(1182, 749);
             Controls.Add(Image_filter);
-            Margin = new Padding(2);
+            Margin = new Padding(2, 3, 2, 3);
             Name = "Form1";
+            Padding = new Padding(3, 85, 3, 4);
             Text = "Form1";
             Load += Form1_Load;
             Image_filters.ResumeLayout(false);
@@ -419,5 +440,6 @@
         private Panel color_picked;
         private Label label2;
         private Panel panel1;
+        private Label label3;
     }
 }

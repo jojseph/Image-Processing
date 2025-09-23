@@ -53,19 +53,35 @@
             return Color.FromArgb(r, g, b);
         });
     }
+    private static Bitmap CreateSafeCopy(Bitmap original)
+    {
+        if (original == null) return null;
+
+        return new Bitmap(original.Width, original.Height, original.PixelFormat);
+    }
+
     private static Bitmap ResizeImage(Bitmap a, Bitmap b)
     {
-        Bitmap resizedImage = new Bitmap(b.Width, b.Height);
+        int targetWidth, targetHeight;
 
+        lock (b)
+        {
+            targetWidth = b.Width;
+            targetHeight = b.Height;
+        }
+
+        Bitmap resizedImage = new Bitmap(targetWidth, targetHeight);
         using (Graphics g = Graphics.FromImage(resizedImage))
         {
             g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
             g.PixelOffsetMode = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
             g.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
 
-            g.DrawImage(a, new Rectangle(0, 0, b.Width, b.Height));
+            lock (a)
+            {
+                g.DrawImage(a, new Rectangle(0, 0, targetWidth, targetHeight));
+            }
         }
-
         return resizedImage;
     }
 
@@ -73,24 +89,43 @@
     {
         if (imageA == null || imageB == null) { return null; }
 
-        Bitmap a = ResizeImage(imageA, imageB);
+        Bitmap copyA, copyB;
 
-        int sub = (subColor.R + subColor.G + subColor.B) / 3;
-        int threshold = 10;
-
-        Bitmap subtractRes = new Bitmap(a.Width, a.Height);
-
-        for (int i = 0; i < a.Width; i++)
+        lock (imageA)
         {
-            for (int j = 0; j < a.Height; j++)
-            {
-                Color front = a.GetPixel(i, j);
-                Color back = imageB.GetPixel(i, j);
-                int curr = (front.R + front.G + front.B) / 3;
-                subtractRes.SetPixel(i, j, Math.Abs(curr - sub) <= threshold ? back : front);
-            }
+            copyA = new Bitmap(imageA);
         }
 
-        return subtractRes;
+        lock (imageB)
+        {
+            copyB = new Bitmap(imageB);
+        }
+
+        try
+        {
+            Bitmap a = ResizeImage(copyA, copyB);
+            int sub = (subColor.R + subColor.G + subColor.B) / 3;
+            int threshold = 10;
+            Bitmap subtractRes = new Bitmap(a.Width, a.Height);
+
+            for (int i = 0; i < a.Width; i++)
+            {
+                for (int j = 0; j < a.Height; j++)
+                {
+                    Color front = a.GetPixel(i, j);
+                    Color back = copyB.GetPixel(i, j);
+                    int curr = (front.R + front.G + front.B) / 3;
+                    subtractRes.SetPixel(i, j, Math.Abs(curr - sub) <= threshold ? back : front);
+                }
+            }
+
+            a.Dispose(); 
+            return subtractRes;
+        }
+        finally
+        {
+            copyA.Dispose();
+            copyB.Dispose();
+        }
     }
 }

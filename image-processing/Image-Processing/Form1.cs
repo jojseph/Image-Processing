@@ -1,4 +1,3 @@
-
 using AForge.Video;
 using AForge.Video.DirectShow;
 using MaterialSkin.Controls;
@@ -58,9 +57,9 @@ namespace Image_Processing
             {
                 try
                 {
-                    using (var test = Image.FromFile(open.FileName)) 
+                    using (var test = Image.FromFile(open.FileName))
                     {
-                        loaded = new Bitmap(test); 
+                        loaded = new Bitmap(test);
                     }
                     reloadImages();
                 }
@@ -133,6 +132,7 @@ namespace Image_Processing
 
         private void btn_loadImageA_Click(object sender, EventArgs e)
         {
+            checkBox1.Checked = false;
             OpenFileDialog open = new OpenFileDialog();
             if (open.ShowDialog() == DialogResult.OK)
             {
@@ -146,8 +146,17 @@ namespace Image_Processing
             OpenFileDialog open = new OpenFileDialog();
             if (open.ShowDialog() == DialogResult.OK)
             {
-                imageB = new Bitmap(open.FileName);
-                reloadImages();
+                try
+                {
+                    Bitmap temp = new Bitmap(open.FileName);
+                    imageB = new Bitmap(temp);
+                    temp.Dispose();
+                    reloadImages();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error loading image: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -250,6 +259,11 @@ namespace Image_Processing
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }

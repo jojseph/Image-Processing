@@ -1,0 +1,8 @@
+C:\Users\novabos\Desktop\New folder (5)\Image_Processing.exe
+C:\Users\novabos\Desktop\New folder (5)\Image_Processing.dll
+C:\Users\novabos\Desktop\New folder (5)\Image_Processing.deps.json
+C:\Users\novabos\Desktop\New folder (5)\Image_Processing.runtimeconfig.json
+C:\Users\novabos\Desktop\New folder (5)\Image_Processing.pdb
+C:\Users\novabos\Desktop\New folder (5)\AForge.dll
+C:\Users\novabos\Desktop\New folder (5)\AForge.Video.dll
+C:\Users\novabos\Desktop\New folder (5)\AForge.Video.DirectShow.dll

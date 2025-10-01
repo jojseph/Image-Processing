@@ -1,0 +1,46 @@
+############################
+# Visual Studio / .NET
+############################
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Visual Studio cache
+.vs/
+*.vsidx
+
+# Build results
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa]ppPackages/
+[Bb]uild/
+artifacts/
+
+# NuGet packages
+*.nupkg
+*.snupkg
+*.nuspec
+*.dll
+*.exe
+*.cache
+*.pdb
+*.mdb
+
+# Publish files
+*.publishsettings
+*.pubxml
+*.pubxml.user
+
+# Others
+*.tmp
+*.bak
+*.log
+*.vspscc

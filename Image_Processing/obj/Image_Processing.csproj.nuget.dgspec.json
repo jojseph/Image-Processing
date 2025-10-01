@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\novabos\\source\\repos\\Image_Processing\\Image_Processing\\Image_Processing.csproj": {}
+    "C:\\Users\\joseph\\Source\\Repos\\Image-Processing1\\Image_Processing\\Image_Processing.csproj": {}
   },
   "projects": {
-    "C:\\Users\\novabos\\source\\repos\\Image_Processing\\Image_Processing\\Image_Processing.csproj": {
+    "C:\\Users\\joseph\\Source\\Repos\\Image-Processing1\\Image_Processing\\Image_Processing.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\novabos\\source\\repos\\Image_Processing\\Image_Processing\\Image_Processing.csproj",
+        "projectUniqueName": "C:\\Users\\joseph\\Source\\Repos\\Image-Processing1\\Image_Processing\\Image_Processing.csproj",
         "projectName": "Image_Processing",
-        "projectPath": "C:\\Users\\novabos\\source\\repos\\Image_Processing\\Image_Processing\\Image_Processing.csproj",
-        "packagesPath": "C:\\Users\\novabos\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\novabos\\source\\repos\\Image_Processing\\Image_Processing\\obj\\",
+        "projectPath": "C:\\Users\\joseph\\Source\\Repos\\Image-Processing1\\Image_Processing\\Image_Processing.csproj",
+        "packagesPath": "C:\\Users\\joseph\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\joseph\\Source\\Repos\\Image-Processing1\\Image_Processing\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\novabos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\joseph\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

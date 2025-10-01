@@ -20,14 +20,27 @@ namespace Image_Processing
         private CancellationTokenSource cancellationTokenSource;
         private Thread backgroundThread;
 
+        int videoEffectsIndex = 0;
+        String[] videoEffects =
+        {
+            "Subtract",
+            "Duplicate",
+            "GrayScale",
+            "Invert",
+            "Sepia"
+        };
+
         public Form1()
         {
             InitializeComponent();
             this.Load += Form1_Load;
-            this.FormClosing += Form1_FormClosing; 
+            this.FormClosing += Form1_FormClosing;
 
             InitializeVideoCameras();
+            InitializePart2();
         }
+
+
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -40,9 +53,9 @@ namespace Image_Processing
 
             if (backgroundThread != null && backgroundThread.IsAlive)
             {
-                if (!backgroundThread.Join(1000)) 
+                if (!backgroundThread.Join(1000))
                 {
-                    backgroundThread.Abort(); 
+                    backgroundThread.Abort();
                 }
             }
         }
@@ -65,6 +78,17 @@ namespace Image_Processing
             pictureBox1.Image = imageA;
             pictureBox2.Image = imageB;
         }
+
+        public void InitializePart2()
+        {
+            foreach (String s in videoEffects)
+            {
+                comboBox2.Items.Add(s);
+            }
+            comboBox2.SelectedIndex = 0;
+
+        }
+
 
         private void loadToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -295,12 +319,28 @@ namespace Image_Processing
         {
             imageA = (Bitmap)eventArgs.Frame.Clone();
 
-            if (imageB != null)
-            {
-                effects = ImageProcessing.Subtract(imageA, imageB, pickedColor);
-                pictureBox3.Image = effects;
-            }
+        
 
+            switch (videoEffectsIndex)
+            {
+                case 0:
+                    effects = ImageProcessing.Subtract(imageA, imageB, pickedColor);
+                    break;
+                case 1:
+                    effects = ImageProcessing.Duplicate(imageA);
+                    break;
+                case 2:
+                    effects = ImageProcessing.Grayscale(imageA);
+                    break;
+                case 3:
+                    effects = ImageProcessing.Invert(imageA);
+                    break;
+                case 4:
+                    effects = ImageProcessing.Sepia(imageA);
+                    break;
+
+            }
+            pictureBox3.Image = effects;
             pictureBox1.Image = imageA;
         }
 
@@ -347,6 +387,16 @@ namespace Image_Processing
         private void embossLaplascianToolStripMenuItem_Click(object sender, EventArgs e)
         {
             picture_result.Image = processed = ConvolutionMatrix.EmbossLaplascian(loaded);
+        }
+
+        private void panel2_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            videoEffectsIndex = comboBox2.SelectedIndex;
         }
     }
 }
